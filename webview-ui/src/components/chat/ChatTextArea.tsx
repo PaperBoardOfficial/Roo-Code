@@ -912,7 +912,7 @@ const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 									onHeightChange?.(height)
 								}}
 								placeholder={placeholderText}
-								minRows={3}
+								minRows={2}
 								maxRows={15}
 								autoFocus={true}
 								className={cn(
@@ -933,7 +933,7 @@ const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 										: "bg-vscode-input-background",
 									"transition-background-color duration-150 ease-in-out",
 									"will-change-background-color",
-									"min-h-[90px]",
+									"min-h-[50px]",
 									"box-border",
 									"rounded",
 									"resize-none",
@@ -957,7 +957,7 @@ const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 								</Button>
 							)}
 
-							{!inputValue && (
+							{/* {!inputValue && (
 								<div
 									className={cn(
 										"absolute",
@@ -977,7 +977,7 @@ const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 									)}>
 									{placeholderBottomText}
 								</div>
-							)}
+							)} */}
 						</div>
 					</div>
 				</div>
