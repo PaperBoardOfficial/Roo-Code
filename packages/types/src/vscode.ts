@@ -28,6 +28,7 @@ export type TerminalActionPromptType = `TERMINAL_${TerminalActionName}`
 
 export const commandIds = [
 	"activationCompleted",
+	"toggleTaskHeader",
 
 	"plusButtonClicked",
 	"promptsButtonClicked",

@@ -71,6 +71,11 @@
 		},
 		"commands": [
 			{
+			    "command": "roo-cline.toggleTaskHeader",
+			    "title": "Toggle Task Header",
+			    "icon": "$(info)"
+			},
+			{
 				"command": "roo-cline.plusButtonClicked",
 				"title": "%command.newTask.title%",
 				"icon": "$(add)"
@@ -239,13 +244,18 @@
 					"when": "view == roo-cline.SidebarProvider"
 				},
 				{
-					"command": "roo-cline.accountButtonClicked",
+					"command": "roo-cline.toggleTaskHeader",
 					"group": "navigation@6",
 					"when": "view == roo-cline.SidebarProvider"
 				},
 				{
-					"command": "roo-cline.settingsButtonClicked",
+					"command": "roo-cline.accountButtonClicked",
 					"group": "navigation@7",
+					"when": "view == roo-cline.SidebarProvider"
+				},
+				{
+					"command": "roo-cline.settingsButtonClicked",
+					"group": "navigation@8",
 					"when": "view == roo-cline.SidebarProvider"
 				}
 			],

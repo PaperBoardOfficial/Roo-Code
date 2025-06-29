@@ -111,6 +111,7 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 	const [isExpanded, setIsExpanded] = useState(
 		historyPreviewCollapsed === undefined ? true : !historyPreviewCollapsed,
 	)
+	const [showTaskHeader, setShowTaskHeader] = useState(true)
 
 	const toggleExpanded = useCallback(() => {
 		const newState = !isExpanded
@@ -662,6 +663,9 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 							break
 						case "focusInput":
 							textAreaRef.current?.focus()
+							break
+						case "toggleTaskHeader":
+							setShowTaskHeader(prev => !prev)
 							break
 					}
 					break
@@ -1368,18 +1372,20 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 			{showAnnouncement && <Announcement hideAnnouncement={hideAnnouncement} />}
 			{task ? (
 				<>
-					{/* <TaskHeader
-						task={task}
-						tokensIn={apiMetrics.totalTokensIn}
-						tokensOut={apiMetrics.totalTokensOut}
-						cacheWrites={apiMetrics.totalCacheWrites}
-						cacheReads={apiMetrics.totalCacheReads}
-						totalCost={apiMetrics.totalCost}
-						contextTokens={apiMetrics.contextTokens}
-						buttonsDisabled={sendingDisabled}
-						handleCondenseContext={handleCondenseContext}
-						onClose={handleTaskCloseButtonClick}
-					/> */}
+					{showTaskHeader && (
+						<TaskHeader
+							task={task}
+							tokensIn={apiMetrics.totalTokensIn}
+							tokensOut={apiMetrics.totalTokensOut}
+							cacheWrites={apiMetrics.totalCacheWrites}
+							cacheReads={apiMetrics.totalCacheReads}
+							totalCost={apiMetrics.totalCost}
+							contextTokens={apiMetrics.contextTokens}
+							buttonsDisabled={sendingDisabled}
+							handleCondenseContext={handleCondenseContext}
+							onClose={handleTaskCloseButtonClick}
+						/>
+					)}
 
 					{hasSystemPromptOverride && (
 						<div className="px-3">
