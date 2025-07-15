@@ -1561,7 +1561,7 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 						/>
 					</div>
 					<div className={`flex-initial min-h-0 ${!areButtonsVisible ? "mb-1" : ""}`}>
-						<AutoApproveMenu />
+						{/* <AutoApproveMenu /> */}
 					</div>
 					{areButtonsVisible && (
 						<div
